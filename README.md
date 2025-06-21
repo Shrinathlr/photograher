@@ -1,4 +1,15 @@
-# Welcome to your Lovable project
+# SnapShare - Photographer Portfolio & Scheduling Platform
+
+A modern web application for photographers to showcase their work, manage client bookings, and streamline their business operations.
+
+## Features
+
+- **Portfolio Management**: Upload and organize your best photography work
+- **Client Scheduling**: Manage bookings and appointments with clients
+- **Earnings Tracking**: Monitor your photography business income
+- **Client Communication**: Built-in chat system for client interactions
+- **Availability Management**: Control when you're available for bookings
+- **Modern UI**: Beautiful, responsive design with glass morphism effects
 
 ## Project info
 
@@ -59,6 +70,7 @@ This project is built with:
 - React
 - shadcn-ui
 - Tailwind CSS
+- Supabase (Backend & Database)
 
 ## How can I deploy this project?
 

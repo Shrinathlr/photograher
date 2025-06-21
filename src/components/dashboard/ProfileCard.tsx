@@ -1,7 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Edit, ShieldCheck, Clock, User, MapPin, Loader2 } from "lucide-react";
+import { Edit, ShieldCheck, Clock, Camera, MapPin, Loader2, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { profileService, authService, Profile } from "@/lib/supabaseService";
@@ -38,8 +38,8 @@ const ProfileCard = () => {
       <Card className="glass-card border-0 shadow-xl overflow-hidden">
         <CardHeader className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 border-b border-white/10">
           <CardTitle className="text-white flex items-center gap-2">
-            <User className="h-5 w-5" />
-            My Profile
+            <Camera className="h-5 w-5" />
+            Photographer Profile
           </CardTitle>
         </CardHeader>
         <CardContent className="p-6">
@@ -59,14 +59,14 @@ const ProfileCard = () => {
       <Card className="glass-card border-0 shadow-xl overflow-hidden">
         <CardHeader className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 border-b border-white/10">
           <CardTitle className="text-white flex items-center gap-2">
-            <User className="h-5 w-5" />
-            My Profile
+            <Camera className="h-5 w-5" />
+            Photographer Profile
           </CardTitle>
         </CardHeader>
         <CardContent className="p-6 text-center">
           <div className="flex flex-col items-center gap-4">
             <div className="p-4 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full">
-              <User className="h-12 w-12 text-purple-300" />
+              <Camera className="h-12 w-12 text-purple-300" />
             </div>
             <p className="text-purple-200/80">No profile data found.</p>
             <Button 
@@ -75,7 +75,7 @@ const ProfileCard = () => {
             >
               <a href="/onboarding">
                 <Edit className="mr-2 h-4 w-4" />
-                Create Profile
+                Setup Profile
               </a>
             </Button>
           </div>
@@ -88,8 +88,8 @@ const ProfileCard = () => {
     if (profile.kyc_status === "verified") {
       return (
         <Badge className="ml-auto flex items-center gap-1 px-3 py-1 text-xs bg-green-500/20 text-green-300 border-green-500/30">
-          <ShieldCheck className="h-3 w-3" />
-          Verified
+          <Award className="h-3 w-3" />
+          Verified Pro
         </Badge>
       );
     } else if (profile.kyc_status === "pending") {
@@ -111,8 +111,8 @@ const ProfileCard = () => {
       <CardHeader className="relative z-10 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border-b border-white/10">
         <div className="flex items-center">
           <CardTitle className="text-xl text-white flex items-center gap-2">
-            <User className="h-5 w-5" />
-            My Profile
+            <Camera className="h-5 w-5" />
+            Photographer Profile
           </CardTitle>
           {getKycBadge()}
         </div>
@@ -124,7 +124,7 @@ const ProfileCard = () => {
           <div className="relative mb-6 group">
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
             <Avatar className="w-24 h-24 border-4 border-white/20 relative z-10 group-hover:scale-105 transition-transform duration-300">
-              <AvatarImage src={profile.profile_photo_url || undefined} alt={profile.full_name || "Profile"} />
+              <AvatarImage src={profile.profile_photo_url || undefined} alt={profile.full_name || "Photographer"} />
               <AvatarFallback className="bg-gradient-to-br from-purple-500 to-pink-500 text-white text-xl font-bold">
                 {profile.full_name?.split(" ").map((n) => n[0]).join("").slice(0, 2).toUpperCase() || "PH"}
               </AvatarFallback>
@@ -134,7 +134,7 @@ const ProfileCard = () => {
           {/* Profile Info */}
           <div className="space-y-3 w-full">
             <h3 className="text-2xl font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
-              {profile.full_name || "Photographer"}
+              {profile.full_name || "Professional Photographer"}
             </h3>
             
             {profile.location && (

@@ -5,6 +5,7 @@ import ReviewsCard from "@/components/dashboard/ReviewsCard";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
+import { Camera, Image, Users, Calendar, TrendingUp } from "lucide-react";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -37,12 +38,66 @@ const Dashboard = () => {
         <main className="flex-1 ml-80 p-4 sm:p-6 lg:p-8">
           {/* Welcome Header */}
           <div className="mb-8 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent mb-4">
-              Welcome Back!
-            </h1>
+            <div className="flex items-center justify-center space-x-3 mb-4">
+              <Camera className="h-12 w-12 text-purple-400" />
+              <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent">
+                Photography Studio
+              </h1>
+            </div>
             <p className="text-purple-200/80 text-lg max-w-2xl mx-auto">
-              Manage your photography business, showcase your portfolio, and connect with clients
+              Capture moments, manage bookings, and grow your photography business
             </p>
+          </div>
+
+          {/* Quick Stats */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:bg-white/10 transition-all duration-300">
+              <div className="flex items-center space-x-3">
+                <div className="p-2 bg-purple-500/20 rounded-lg">
+                  <Camera className="h-5 w-5 text-purple-400" />
+                </div>
+                <div>
+                  <p className="text-sm text-purple-200/60">Total Shoots</p>
+                  <p className="text-xl font-bold text-white">24</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:bg-white/10 transition-all duration-300">
+              <div className="flex items-center space-x-3">
+                <div className="p-2 bg-blue-500/20 rounded-lg">
+                  <Image className="h-5 w-5 text-blue-400" />
+                </div>
+                <div>
+                  <p className="text-sm text-purple-200/60">Portfolio Images</p>
+                  <p className="text-xl font-bold text-white">156</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:bg-white/10 transition-all duration-300">
+              <div className="flex items-center space-x-3">
+                <div className="p-2 bg-green-500/20 rounded-lg">
+                  <Users className="h-5 w-5 text-green-400" />
+                </div>
+                <div>
+                  <p className="text-sm text-purple-200/60">Happy Clients</p>
+                  <p className="text-xl font-bold text-white">18</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:bg-white/10 transition-all duration-300">
+              <div className="flex items-center space-x-3">
+                <div className="p-2 bg-pink-500/20 rounded-lg">
+                  <TrendingUp className="h-5 w-5 text-pink-400" />
+                </div>
+                <div>
+                  <p className="text-sm text-purple-200/60">This Month</p>
+                  <p className="text-xl font-bold text-white">₹45,000</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Dashboard Grid - Reorganized Layout */}

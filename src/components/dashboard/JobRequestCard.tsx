@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { MessageSquare, Calendar, User, Loader2, CheckCircle, XCircle, Clock, Check } from "lucide-react";
+import { MessageSquare, Calendar, User, Loader2, CheckCircle, XCircle, Clock, Check, Camera } from "lucide-react";
 import { useEffect, useState } from "react";
 import { customerRequestService, authService, CustomerRequest, jobService } from "@/lib/supabaseService";
 import { toast } from "@/components/ui/use-toast";
@@ -31,7 +31,7 @@ const JobRequestCard = () => {
       if (!ignore) {
         const requestsWithCustomer = data.map((req: any) => ({
           ...req,
-          customer_name: req.profiles?.full_name ?? "Customer",
+          customer_name: req.profiles?.full_name ?? "Client",
           customer_photo: req.profiles?.profile_photo_url ?? null
         }));
         setRequests(requestsWithCustomer);
@@ -62,10 +62,10 @@ const JobRequestCard = () => {
   const handleAccept = async (requestId: string) => {
     const success = await jobService.acceptJob(requestId);
     if (success) {
-      toast({ title: "Job Accepted", description: "This request has been moved to your active jobs." });
+      toast({ title: "Booking Accepted", description: "This photography session has been added to your schedule." });
       // Here you would typically refetch the job requests to update the list
     } else {
-      toast({ variant: "destructive", title: "Error", description: "Could not accept the job." });
+      toast({ variant: "destructive", title: "Error", description: "Could not accept the booking." });
     }
   };
 
@@ -74,8 +74,8 @@ const JobRequestCard = () => {
       <Card className="glass-card border-0 shadow-xl overflow-hidden">
         <CardHeader className="bg-gradient-to-r from-orange-500/20 to-red-500/20 border-b border-white/10">
           <CardTitle className="text-white flex items-center gap-2">
-            <MessageSquare className="h-5 w-5" />
-            Job Requests
+            <Camera className="h-5 w-5" />
+            Booking Requests
           </CardTitle>
         </CardHeader>
         <CardContent className="p-6">
@@ -96,13 +96,13 @@ const JobRequestCard = () => {
         <div className="flex items-center justify-between">
           <div>
             <CardTitle className="text-white flex items-center gap-2">
-              <MessageSquare className="h-5 w-5" />
-              Job Requests
+              <Camera className="h-5 w-5" />
+              Booking Requests
             </CardTitle>
             <CardDescription className="text-orange-200/80">
               {requests.length === 0 
-                ? "No new requests" 
-                : `You have ${requests.length} new request${requests.length === 1 ? "" : "s"}`
+                ? "No new booking requests" 
+                : `You have ${requests.length} new booking request${requests.length === 1 ? "" : "s"}`
               }
             </CardDescription>
           </div>
@@ -119,10 +119,10 @@ const JobRequestCard = () => {
           {requests.length === 0 ? (
             <div className="text-center py-8">
               <div className="p-4 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-full w-fit mx-auto mb-4">
-                <MessageSquare className="h-12 w-12 text-orange-300" />
+                <Camera className="h-12 w-12 text-orange-300" />
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">No job requests yet</h3>
-              <p className="text-orange-200/70">When clients send you requests, they'll appear here.</p>
+              <h3 className="text-lg font-semibold text-white mb-2">No booking requests yet</h3>
+              <p className="text-orange-200/70">When clients request photography sessions, they'll appear here.</p>
             </div>
           ) : (
             requests.map((req) => (
@@ -133,7 +133,7 @@ const JobRequestCard = () => {
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex items-start gap-4 flex-1">
                     <Avatar className="w-12 h-12 border-2 border-white/20">
-                      <AvatarImage src={req.customer_photo || undefined} alt={req.customer_name || "Customer"} />
+                      <AvatarImage src={req.customer_photo || undefined} alt={req.customer_name || "Client"} />
                       <AvatarFallback className="bg-gradient-to-br from-orange-500 to-red-500 text-white">
                         {req.customer_name?.charAt(0) ?? "C"}
                       </AvatarFallback>
@@ -143,7 +143,7 @@ const JobRequestCard = () => {
                       <div className="flex items-center gap-2">
                         <h4 className="font-semibold text-white">{req.customer_name}</h4>
                         <Badge className="bg-orange-500/20 text-orange-300 border-orange-500/30 text-xs">
-                          {req.event_type}
+                          {req.event_type || "Photography Session"}
                         </Badge>
                       </div>
                       

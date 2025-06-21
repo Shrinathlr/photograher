@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useEffect, useState } from "react";
 import { authService } from "@/lib/supabaseService";
-import { Menu, LogOut, Home, UserPlus, Users } from "lucide-react";
+import { Menu, LogOut, Home, UserPlus, Users, Camera, Image, Calendar } from "lucide-react";
 import AvailabilityToggle from "@/components/dashboard/AvailabilityToggle";
 import { NavLink } from "react-router-dom";
 
@@ -52,11 +52,17 @@ const Header = () => {
             <div className="relative">
               <img
                 src={LOGO_URL}
-                alt="Logo"
+                alt="SnapShare Logo"
                 className="h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                 style={{ minWidth: 80, maxHeight: 80 }}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Camera className="h-6 w-6 text-purple-400" />
+              <span className="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                SnapShare
+              </span>
             </div>
           </Link>
           <nav className="flex items-center space-x-8 text-sm font-medium">
@@ -65,14 +71,14 @@ const Header = () => {
               className="flex items-center gap-2 text-purple-200 hover:text-white transition-all duration-300 hover:scale-105"
             >
               <Home className="h-4 w-4" />
-              Dashboard
+              Studio
             </Link>
             <Link 
               to="/onboarding" 
               className="flex items-center gap-2 text-purple-200 hover:text-white transition-all duration-300 hover:scale-105"
             >
               <UserPlus className="h-4 w-4" />
-              Onboarding
+              Profile Setup
             </Link>
           </nav>
         </div>
@@ -99,10 +105,16 @@ const Header = () => {
                     <div className="relative">
                       <img
                         src={LOGO_URL}
-                        alt="Logo"
+                        alt="SnapShare Logo"
                         className="h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                         style={{ minWidth: 64, maxHeight: 64 }}
                       />
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Camera className="h-5 w-5 text-purple-400" />
+                      <span className="text-lg font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                        SnapShare
+                      </span>
                     </div>
                   </Link>
                   <div className="space-y-2">
@@ -111,14 +123,14 @@ const Header = () => {
                       className="flex items-center gap-3 block px-4 py-3 text-lg text-purple-200 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-300"
                     >
                       <Home className="h-5 w-5" />
-                      Dashboard
+                      Studio
                     </Link>
                     <Link 
                       to="/onboarding" 
                       className="flex items-center gap-3 block px-4 py-3 text-lg text-purple-200 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-300"
                     >
                       <UserPlus className="h-5 w-5" />
-                      Onboarding
+                      Profile Setup
                     </Link>
                   </div>
                 </nav>
@@ -138,8 +150,16 @@ const Header = () => {
               }
             >
               <Users className="h-5 w-5" />
-              My Clients
+              Clients
             </NavLink>
+            <div className="hidden md:flex items-center gap-2 px-3 py-2 text-purple-200/80">
+              <Image className="h-5 w-5" />
+              <span className="text-sm font-medium">Portfolio</span>
+            </div>
+            <div className="hidden md:flex items-center gap-2 px-3 py-2 text-purple-200/80">
+              <Calendar className="h-5 w-5" />
+              <span className="text-sm font-medium">Bookings</span>
+            </div>
             {isLoggedIn && (
               <AvailabilityToggle />
             )}
