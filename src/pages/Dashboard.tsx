@@ -58,7 +58,7 @@ const Dashboard = () => {
                 </div>
                 <div>
                   <p className="text-sm text-purple-200/60">Total Shoots</p>
-                  <p className="text-xl font-bold text-white">24</p>
+                  <p className="text-xl font-bold text-white">0</p>
                 </div>
               </div>
             </div>
@@ -70,7 +70,7 @@ const Dashboard = () => {
                 </div>
                 <div>
                   <p className="text-sm text-purple-200/60">Portfolio Images</p>
-                  <p className="text-xl font-bold text-white">156</p>
+                  <p className="text-xl font-bold text-white">0</p>
                 </div>
               </div>
             </div>
@@ -82,7 +82,7 @@ const Dashboard = () => {
                 </div>
                 <div>
                   <p className="text-sm text-purple-200/60">Happy Clients</p>
-                  <p className="text-xl font-bold text-white">18</p>
+                  <p className="text-xl font-bold text-white">0</p>
                 </div>
               </div>
             </div>
@@ -94,7 +94,7 @@ const Dashboard = () => {
                 </div>
                 <div>
                   <p className="text-sm text-purple-200/60">This Month</p>
-                  <p className="text-xl font-bold text-white">₹45,000</p>
+                  <p className="text-xl font-bold text-white">₹0</p>
                 </div>
               </div>
             </div>

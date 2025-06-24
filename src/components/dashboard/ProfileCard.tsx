@@ -38,7 +38,6 @@ const ProfileCard = () => {
       <Card className="glass-card border-0 shadow-xl overflow-hidden">
         <CardHeader className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 border-b border-white/10">
           <CardTitle className="text-white flex items-center gap-2">
-            <Camera className="h-5 w-5" />
             Photographer Profile
           </CardTitle>
         </CardHeader>
@@ -59,7 +58,6 @@ const ProfileCard = () => {
       <Card className="glass-card border-0 shadow-xl overflow-hidden">
         <CardHeader className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 border-b border-white/10">
           <CardTitle className="text-white flex items-center gap-2">
-            <Camera className="h-5 w-5" />
             Photographer Profile
           </CardTitle>
         </CardHeader>
@@ -87,14 +85,14 @@ const ProfileCard = () => {
   const getKycBadge = () => {
     if (profile.kyc_status === "verified") {
       return (
-        <Badge className="ml-auto flex items-center gap-1 px-3 py-1 text-xs bg-green-500/20 text-green-300 border-green-500/30">
+        <Badge className="ml-4 flex items-center gap-1 px-3 py-1 text-xs bg-green-500/20 text-green-300 border-green-500/30">
           <Award className="h-3 w-3" />
           Verified Pro
         </Badge>
       );
     } else if (profile.kyc_status === "pending") {
       return (
-        <Badge className="ml-auto flex items-center gap-1 px-3 py-1 text-xs bg-yellow-500/20 text-yellow-300 border-yellow-500/30">
+        <Badge className="ml-4 flex items-center gap-1 px-3 py-1 text-xs bg-yellow-500/20 text-yellow-300 border-yellow-500/30">
           <Clock className="h-3 w-3" />
           Pending
         </Badge>
@@ -111,7 +109,6 @@ const ProfileCard = () => {
       <CardHeader className="relative z-10 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border-b border-white/10">
         <div className="flex items-center">
           <CardTitle className="text-xl text-white flex items-center gap-2">
-            <Camera className="h-5 w-5" />
             Photographer Profile
           </CardTitle>
           {getKycBadge()}

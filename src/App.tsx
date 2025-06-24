@@ -45,7 +45,7 @@ function RequireAuth({ children }: { children: React.ReactNode }) {
       <div className="h-screen flex flex-col items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
         <div className="flex items-center space-x-3 mb-4">
           <Camera className="h-12 w-12 text-purple-400 animate-pulse" />
-          <h1 className="text-3xl font-bold text-white">SnapShare</h1>
+          <h1 className="text-3xl font-bold text-white">reelsstudio</h1>
         </div>
         <Loader2 className="h-8 w-8 animate-spin text-purple-400" />
         <p className="text-gray-400 mt-4">Loading your photography studio...</p>
@@ -114,7 +114,7 @@ const AppContent = () => {
       <div className="flex flex-col justify-center items-center h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
         <div className="flex items-center space-x-3 mb-4">
           <Camera className="h-12 w-12 text-purple-400 animate-pulse" />
-          <h1 className="text-3xl font-bold text-white">SnapShare</h1>
+          <h1 className="text-3xl font-bold text-white">reelsstudio</h1>
         </div>
         <Loader2 className="h-8 w-8 animate-spin text-purple-400" />
         <p className="text-gray-400 mt-4">Loading your photography studio...</p>

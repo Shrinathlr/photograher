@@ -52,17 +52,11 @@ const Header = () => {
             <div className="relative">
               <img
                 src={LOGO_URL}
-                alt="SnapShare Logo"
+                alt="Logo"
                 className="h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                 style={{ minWidth: 80, maxHeight: 80 }}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Camera className="h-6 w-6 text-purple-400" />
-              <span className="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                SnapShare
-              </span>
             </div>
           </Link>
           <nav className="flex items-center space-x-8 text-sm font-medium">
@@ -105,16 +99,10 @@ const Header = () => {
                     <div className="relative">
                       <img
                         src={LOGO_URL}
-                        alt="SnapShare Logo"
+                        alt="Logo"
                         className="h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                         style={{ minWidth: 64, maxHeight: 64 }}
                       />
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Camera className="h-5 w-5 text-purple-400" />
-                      <span className="text-lg font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                        SnapShare
-                      </span>
                     </div>
                   </Link>
                   <div className="space-y-2">
